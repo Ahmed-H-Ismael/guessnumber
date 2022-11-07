@@ -7,10 +7,10 @@ let score        = document.querySelector(".score");
 let high         = document.querySelector(".highscore");
 let scoreNumber = 20;
 let highNumber  = 0;
-
+let randomNumber
 function startGame(){
     scoreNumber = 20
-    let randomNumber = Math.ceil(Math.random() * 20);
+    randomNumber = Math.ceil(Math.random() * 20);
     document.body.style.backgroundColor = "#222"
     displayMessage("Start guessing...")
     questionMark.textContent = "?";
@@ -30,7 +30,7 @@ function lostGame(){
     }
 }
 buttonCheck.addEventListener("click",function(){
-    let guessNumber  = Number(document.querySelector(".guess").value);
+    const guessNumber  = Number(document.querySelector(".guess").value);
     if(!guessNumber){
         displayMessage(" ⛔️ No Number")
     }else if(guessNumber == randomNumber){
